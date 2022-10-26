@@ -1,11 +1,14 @@
 import { ITeam } from '../interfaces/response/ITeamResponse'
 
 class TeamModel {
+  id: number
   team: string
   logo: string
   wins: number
   gamesPlayed: number
+
   constructor(data: ITeam) {
+    this.id = data.id
     this.team = data.team
     this.logo = data.logo
     this.wins = data.wins

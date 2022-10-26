@@ -1,20 +1,22 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { TeamCell } from './components/team-cell/TeamCell'
 import { TeamModel } from './models/TeamModel'
 
 const App = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true)
   const [allTeamsData, setAllTeamsData] = useState<TeamModel[]>([])
 
-  const url = 'https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/'
+  const baseUrl = 'https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/'
 
   const loadTeamData = async () => {
     const loadedTeamData: TeamModel[] = []
     try {
       const {
         data: { team },
-      } = await axios.get(`${url}ATL`)
+      } = await axios.get(`${baseUrl}TOR`)
       const teamWinData = new TeamModel({
+        id: team.id,
         team: team.abbreviation,
         logo: team.logos[0].href,
         wins: team.record.items[0].stats[17].value,
@@ -36,13 +38,7 @@ const App = () => {
   ) : (
     <div>
       {allTeamsData.map((teamData) => {
-        return (
-          <>
-            <p>{teamData.team}</p>
-            <img src={`${teamData.logo}`} height={'24px'} width={'24px'} />
-            <p>{teamData.pace()}</p>
-          </>
-        )
+        return <TeamCell key={teamData.id} team={teamData} />
       })}
     </div>
   )
