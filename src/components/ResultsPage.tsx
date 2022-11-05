@@ -1,18 +1,17 @@
 import { useTeamData } from '../context/useTeamData'
-import { TeamModel } from '../models/TeamModel'
+import { TeamStatsByDivision } from './division-collapsible/TeamStatsByDivision'
 import { LoadingSpinner } from './LoadingSpinner'
-import { TeamCell } from './team-cell/TeamCell'
+import { OverallStandings } from './OverallStandings'
 
 const ResultsPage = () => {
-  const { isLoading, teamsWinsData } = useTeamData()
+  const { isLoading } = useTeamData()
 
   return isLoading ? (
     <LoadingSpinner />
   ) : (
     <>
-      {teamsWinsData.map((team: TeamModel) => {
-        return <TeamCell key={team.id} team={team} />
-      })}
+      <OverallStandings />
+      <TeamStatsByDivision />
     </>
   )
 }
