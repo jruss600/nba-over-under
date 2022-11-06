@@ -1,4 +1,4 @@
-import { DivisionNameType } from '../../types/DivisionNameType'
+import { DivisionNames } from '../../enums/DivisionNames'
 
 export interface ITeamResponse {
   id: number
@@ -6,5 +6,5 @@ export interface ITeamResponse {
   logo: string
   wins: number
   gamesPlayed: number
-  division: DivisionNameType | undefined
+  division: DivisionNames | undefined
 }

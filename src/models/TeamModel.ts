@@ -1,5 +1,5 @@
+import { DivisionNames } from '../enums/DivisionNames'
 import { ITeamResponse } from '../interfaces/response/ITeamResponse'
-import { DivisionNameType } from '../types/DivisionNameType'
 
 class TeamModel {
   id: number
@@ -7,7 +7,7 @@ class TeamModel {
   logo: string
   wins: number
   gamesPlayed: number
-  division: DivisionNameType | undefined
+  division: DivisionNames | undefined
 
   constructor(data: ITeamResponse) {
     this.id = data.id

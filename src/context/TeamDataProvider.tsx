@@ -1,8 +1,8 @@
 import axios from 'axios'
 import { ReactNode, useCallback, useEffect, useState } from 'react'
 import { teams } from '../data/teamAbbreviations'
+import { DivisionNames } from '../enums/DivisionNames'
 import { TeamModel } from '../models/TeamModel'
-import { DivisionNameType } from '../types/DivisionNameType'
 import { TeamDataContext } from './TeamDataContext'
 
 interface ITeamDataProvider {
@@ -15,24 +15,24 @@ const TeamDataProvider = ({ children }: ITeamDataProvider) => {
 
   const baseUrl = 'https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/'
 
-  const assignToDivision = useCallback((standingSummary: string): DivisionNameType | undefined => {
+  const assignToDivision = useCallback((standingSummary: string): DivisionNames | undefined => {
     if (standingSummary.toLowerCase().includes('atlantic')) {
-      return 'Atlantic'
+      return DivisionNames.Atlantic
     }
     if (standingSummary.toLowerCase().includes('central')) {
-      return 'Central'
+      return DivisionNames.Central
     }
     if (standingSummary.toLowerCase().includes('southeast')) {
-      return 'Southeast'
+      return DivisionNames.Southeast
     }
     if (standingSummary.toLowerCase().includes('northwest')) {
-      return 'Northwest'
+      return DivisionNames.Northwest
     }
     if (standingSummary.toLowerCase().includes('pacific')) {
-      return 'Pacific'
+      return DivisionNames.Pacific
     }
     if (standingSummary.toLowerCase().includes('southwest')) {
-      return 'Southwest'
+      return DivisionNames.Southwest
     }
     return undefined
   }, [])

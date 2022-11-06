@@ -1,12 +1,12 @@
-import { DivisionNameType } from '../types/DivisionNameType'
+import { DivisionNames } from '../enums/DivisionNames'
 
-const divisions: DivisionNameType[] = [
-  'Atlantic',
-  'Central',
-  'Southeast',
-  'Northwest',
-  'Pacific',
-  'Southwest',
+const divisions: DivisionNames[] = [
+  DivisionNames.Atlantic,
+  DivisionNames.Central,
+  DivisionNames.Southeast,
+  DivisionNames.Northwest,
+  DivisionNames.Pacific,
+  DivisionNames.Southwest,
 ]
 
 export { divisions }
