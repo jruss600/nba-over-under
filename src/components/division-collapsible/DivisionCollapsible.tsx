@@ -23,7 +23,7 @@ const DivisionCollapsible = ({ divisionName }: IDivsionCollapsible) => {
   const { teamsWinsData } = useTeamData()
   const divisionTeams: TeamModel[] = useMemo(
     () => teamsWinsData.filter((team: TeamModel) => team.division === divisionName),
-    [],
+    [teamsWinsData],
   )
 
   const onClose = useCallback(() => {

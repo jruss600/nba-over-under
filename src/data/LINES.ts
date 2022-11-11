@@ -1,0 +1,36 @@
+import { TeamNames } from '../enums/TeamNames'
+
+const LINES = new Map<TeamNames, number>([
+  [TeamNames.BOS, 53.5],
+  [TeamNames.MIL, 52.5],
+  [TeamNames.PHX, 52.5],
+  [TeamNames.LAC, 52.5],
+  [TeamNames.GS, 51.5],
+  [TeamNames.PHI, 50.5],
+  [TeamNames.BKN, 50.5],
+  [TeamNames.DEN, 49.5],
+  [TeamNames.MEM, 48.5],
+  [TeamNames.DAL, 48.5],
+  [TeamNames.MIA, 48.5],
+  [TeamNames.MIN, 48.5],
+  [TeamNames.CLE, 47.5],
+  [TeamNames.ATL, 45.5],
+  [TeamNames.LAL, 45.5],
+  [TeamNames.TOR, 45.5],
+  [TeamNames.NO, 44.5],
+  [TeamNames.CHI, 41.5],
+  [TeamNames.POR, 39.5],
+  [TeamNames.NY, 38.5],
+  [TeamNames.CHA, 35.5],
+  [TeamNames.WSH, 35.5],
+  [TeamNames.SAC, 33.5],
+  [TeamNames.DET, 29.5],
+  [TeamNames.ORL, 26.5],
+  [TeamNames.UTAH, 24.5],
+  [TeamNames.OKC, 23.5],
+  [TeamNames.IND, 23.5],
+  [TeamNames.HOU, 23.5],
+  [TeamNames.SA, 22.5],
+])
+
+export { LINES }

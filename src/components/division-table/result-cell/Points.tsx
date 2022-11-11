@@ -1,5 +1,7 @@
 import { useMemo } from 'react'
 import styled from 'styled-components'
+import { OverUnder } from '../../../enums/OverUnder'
+import { pointsCalculator } from '../../../helpers/pointsCalculator'
 
 interface IIsPositive {
   isPositive: boolean
@@ -8,21 +10,27 @@ const PointsDisplay = styled.span<IIsPositive>`
   color: ${({ isPositive }) => (isPositive ? 'black' : 'red')};
 `
 
+const PointsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`
+
 interface IPoints {
   line: number
-  pick: string
+  pick: OverUnder
   pace: number
   isLock: boolean
 }
 
 const Points = ({ line, pick, pace, isLock }: IPoints) => {
   const currentPoints: number = useMemo(() => {
-    return (pace - line) * (pick === 'O' ? 1 : -1) * (isLock ? 2 : 1)
+    return pointsCalculator(pace, line, pick, isLock)
   }, [pace, line, pick, isLock])
   return (
-    <>
-      Points: <PointsDisplay isPositive={currentPoints > 0}>{currentPoints}</PointsDisplay>
-    </>
+    <PointsContainer>
+      Points:
+      <PointsDisplay isPositive={currentPoints >= 0}>{` ${currentPoints}`}</PointsDisplay>
+    </PointsContainer>
   )
 }
 

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { LINES } from '../../data/LINES'
 import { TeamModel } from '../../models/TeamModel'
 import { Line } from './Line'
 import { Logo } from './Logo'
@@ -21,7 +22,7 @@ const TeamCell = ({ team }: ITeamCell) => {
     <TeamCellContainer>
       <P>{team.team}</P>
       <Logo logo={team.logo} />
-      <Line line={54.5} />
+      <Line line={LINES.get(team.team) ?? 0} />
       <Pace team={team} />
     </TeamCellContainer>
   )

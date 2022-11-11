@@ -13,3 +13,8 @@ export const HeaderCellContainer = styled.th`
 export const DataCellContainer = styled.td`
   ${CellStyles}
 `
+
+export const Table = styled.table`
+  width: 100%;
+  margin-top: 1rem;
+`

@@ -1,9 +1,10 @@
 import { DivisionNames } from '../enums/DivisionNames'
+import { TeamNames } from '../enums/TeamNames'
 import { ITeamResponse } from '../interfaces/response/ITeamResponse'
 
 class TeamModel {
   id: number
-  team: string
+  team: TeamNames
   logo: string
   wins: number
   gamesPlayed: number

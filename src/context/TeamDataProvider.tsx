@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { ReactNode, useCallback, useEffect, useState } from 'react'
-import { teams } from '../data/teamAbbreviations'
 import { DivisionNames } from '../enums/DivisionNames'
+import { TeamNames } from '../enums/TeamNames'
 import { TeamModel } from '../models/TeamModel'
 import { TeamDataContext } from './TeamDataContext'
 
@@ -39,7 +39,9 @@ const TeamDataProvider = ({ children }: ITeamDataProvider) => {
 
   useEffect(() => {
     const loadTeamData = async () => {
-      Promise.all(teams.map(async (team: string) => await axios.get(`${baseUrl}${team}`)))
+      Promise.all(
+        Object.values(TeamNames).map(async (team: string) => await axios.get(`${baseUrl}${team}`)),
+      )
         .then((responses) => {
           const teamsData: TeamModel[] = responses.map(({ data: { team: teamData } }) => {
             return new TeamModel({
