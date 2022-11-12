@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { ReactNode, useCallback, useEffect, useState } from 'react'
+import { LINES } from '../data/LINES'
 import { DivisionNames } from '../enums/DivisionNames'
 import { TeamNames } from '../enums/TeamNames'
 import { TeamModel } from '../models/TeamModel'
@@ -51,6 +52,7 @@ const TeamDataProvider = ({ children }: ITeamDataProvider) => {
               wins: teamData.record.items[0].stats[17].value,
               gamesPlayed: teamData.record.items[0].stats[7].value,
               division: assignToDivision(teamData.standingSummary),
+              line: LINES.get(teamData.abbreviation as TeamNames) ?? -9999,
             })
           })
           setTeamsWinsData(teamsData)

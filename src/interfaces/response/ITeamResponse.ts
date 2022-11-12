@@ -8,4 +8,5 @@ export interface ITeamResponse {
   wins: number
   gamesPlayed: number
   division: DivisionNames | undefined
+  line: number
 }

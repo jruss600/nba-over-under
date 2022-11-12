@@ -1,18 +1,11 @@
 import { useCallback, useMemo, useState } from 'react'
 import Collapsible from 'react-collapsible'
-import styled from 'styled-components'
 import { useTeamData } from '../../context/useTeamData'
 import { DivisionNames } from '../../enums/DivisionNames'
 import { TeamModel } from '../../models/TeamModel'
 import { DivisionTable } from '../division-table/DivisionTable'
+import { CollapsibleContainer } from '../styled-components/CollapsibleContainer'
 import { CollapsibleHeader } from './CollapsibleHeader'
-
-const CollapsibleContainer = styled.div`
-  border: 1px solid blue;
-  border-radius: 5px;
-  margin: 2rem 4rem;
-  padding: 1rem;
-`
 
 interface IDivsionCollapsible {
   divisionName: DivisionNames

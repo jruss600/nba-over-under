@@ -6,7 +6,7 @@ interface IPace {
 }
 
 const Pace = ({ team }: IPace) => {
-  return <P>{`Pace: ${team.pace()}`}</P>
+  return <P>{`Pace: ${team.pace}`}</P>
 }
 
 export { Pace }

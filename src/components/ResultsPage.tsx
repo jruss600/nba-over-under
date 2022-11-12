@@ -2,7 +2,8 @@ import styled from 'styled-components'
 import { useTeamData } from '../context/useTeamData'
 import { TeamStatsByDivision } from './division-collapsible/TeamStatsByDivision'
 import { LoadingSpinner } from './LoadingSpinner'
-import { OverallStandings } from './OverallStandings'
+import { OverallStandings } from './overall-standings/OverallStandings'
+import { Title } from './Title'
 
 const Container = styled.div``
 
@@ -15,6 +16,7 @@ const ResultsPage = () => {
         <LoadingSpinner />
       ) : (
         <>
+          <Title>NBA Over/Unders 2022-23</Title>
           <OverallStandings />
           <TeamStatsByDivision />
         </>
