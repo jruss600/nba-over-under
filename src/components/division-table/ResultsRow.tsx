@@ -1,16 +1,17 @@
 import { IPicks } from '../../interfaces/IPicks'
 import { TeamModel } from '../../models/TeamModel'
 import { ResultCell } from './result-cell/ResultCell'
-import { DataCellContainer } from './Table.styles'
+import { DataCellContainer, Row } from './Table.styles'
 
 interface IResultsRow {
   teams: TeamModel[]
   player: IPicks
+  index: number
 }
 
-const ResultsRow = ({ teams, player }: IResultsRow) => {
+const ResultsRow = ({ teams, player, index }: IResultsRow) => {
   return (
-    <tr>
+    <Row index={index}>
       <DataCellContainer>{player.name}</DataCellContainer>
       {teams.map((team: TeamModel) => {
         return (
@@ -19,7 +20,7 @@ const ResultsRow = ({ teams, player }: IResultsRow) => {
           </DataCellContainer>
         )
       })}
-    </tr>
+    </Row>
   )
 }
 

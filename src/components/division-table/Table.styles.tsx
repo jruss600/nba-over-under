@@ -18,3 +18,15 @@ export const Table = styled.table`
   width: 100%;
   margin-top: 1rem;
 `
+
+export const ScrollableContainer = styled.div`
+  overflow-x: auto;
+`
+
+interface IRow {
+  index: number
+}
+
+export const Row = styled.tr<IRow>`
+  background-color: ${({ index }) => (index % 2 ? '' : '#dcdedd')};
+`

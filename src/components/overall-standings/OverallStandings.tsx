@@ -10,6 +10,7 @@ const OverallStandingsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  overflow-x: auto;
 `
 
 const OverallStandings = () => {
