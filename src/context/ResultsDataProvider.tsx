@@ -1,5 +1,6 @@
 import { ReactNode, useEffect, useState } from 'react'
 import { PICKS } from '../data/PICKS'
+import { numberCorrectCalculator } from '../helpers/numberCorrectCalculator'
 import { totalPointsCalculator } from '../helpers/totalPointsCalculator'
 import { IPicks } from '../interfaces/IPicks'
 import { IResult } from '../interfaces/IResult'
@@ -21,6 +22,7 @@ const ResultsDataProvider = ({ children }: IResultsDataProvider) => {
         newPlayerResults.push({
           name,
           totalPoints: totalPointsCalculator(teamsWinsData, picks, locks),
+          numberCorrect: numberCorrectCalculator(teamsWinsData, picks),
         })
       })
       setPlayerResults(newPlayerResults)

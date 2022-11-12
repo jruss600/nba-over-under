@@ -21,13 +21,15 @@ const OverallStandingsTable = () => {
           <th>Place</th>
           <th>Name</th>
           <th>Points</th>
+          <th># Correct</th>
         </tr>
-        {sortedPlayerResults.map(({ name, totalPoints }: IResult, i: number) => {
+        {sortedPlayerResults.map(({ name, totalPoints, numberCorrect }: IResult, i: number) => {
           return (
             <tr key={`overall-results-row-${i}`}>
               <td>{i + 1}</td>
               <td>{name}</td>
               <td>{totalPoints}</td>
+              <td>{numberCorrect}</td>
             </tr>
           )
         })}
