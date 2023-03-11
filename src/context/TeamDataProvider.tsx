@@ -45,7 +45,6 @@ const TeamDataProvider = ({ children }: ITeamDataProvider) => {
       )
         .then((responses) => {
           const teamsData: TeamModel[] = responses.map(({ data: { team: teamData } }) => {
-            console.log('teamData: ', teamData.abbreviation, teamData)
             return new TeamModel({
               id: teamData.id,
               team: teamData.abbreviation,
@@ -61,7 +60,6 @@ const TeamDataProvider = ({ children }: ITeamDataProvider) => {
             })
           })
           setTeamsWinsData(teamsData)
-          console.log('teamsData: ', teamsData)
           setIsLoading(false)
         })
         .catch((error) => alert(`Error: ${error}`))
