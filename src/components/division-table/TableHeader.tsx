@@ -8,16 +8,18 @@ interface ITableHeader {
 
 const TableHeader = ({ teams }: ITableHeader) => {
   return (
-    <tr>
-      <HeaderCellContainer />
-      {teams.map((team: TeamModel) => {
-        return (
-          <HeaderCellContainer key={`team-cell-${team.id}`}>
-            <TeamCell team={team} />
-          </HeaderCellContainer>
-        )
-      })}
-    </tr>
+    <thead>
+      <tr>
+        <HeaderCellContainer />
+        {teams.map((team: TeamModel) => {
+          return (
+            <HeaderCellContainer key={`team-cell-${team.id}`}>
+              <TeamCell team={team} />
+            </HeaderCellContainer>
+          )
+        })}
+      </tr>
+    </thead>
   )
 }
 

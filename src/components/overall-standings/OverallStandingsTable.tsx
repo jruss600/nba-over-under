@@ -1,13 +1,6 @@
-import styled from 'styled-components'
 import { useResultsData } from '../../context/useResultsData'
 import { IResult } from '../../interfaces/IResult'
-
-const TableContainer = styled.div`
-  margin-top: 1rem;
-  display: flex;
-  justify-content: flex-start;
-  overflow-x: auto;
-`
+import { Cell, HeaderCell, TableContainer } from './OverallStandingsTable.styles'
 
 const OverallStandingsTable = () => {
   const { playerResults } = useResultsData()
@@ -18,22 +11,26 @@ const OverallStandingsTable = () => {
   return (
     <TableContainer>
       <table>
-        <tr>
-          <th>Place</th>
-          <th>Name</th>
-          <th>Points</th>
-          <th># Correct</th>
-        </tr>
-        {sortedPlayerResults.map(({ name, totalPoints, numberCorrect }: IResult, i: number) => {
-          return (
-            <tr key={`overall-results-row-${i}`}>
-              <td>{i + 1}</td>
-              <td>{name}</td>
-              <td>{totalPoints}</td>
-              <td>{numberCorrect}</td>
-            </tr>
-          )
-        })}
+        <thead>
+          <tr>
+            <HeaderCell>Place</HeaderCell>
+            <HeaderCell>Name</HeaderCell>
+            <HeaderCell>Points</HeaderCell>
+            <HeaderCell># Correct</HeaderCell>
+          </tr>
+        </thead>
+        <tbody>
+          {sortedPlayerResults.map(({ name, totalPoints, numberCorrect }: IResult, i: number) => {
+            return (
+              <tr key={`overall-results-row-${i}`}>
+                <Cell>{i + 1}</Cell>
+                <Cell>{name}</Cell>
+                <Cell>{totalPoints}</Cell>
+                <Cell>{numberCorrect}</Cell>
+              </tr>
+            )
+          })}
+        </tbody>
       </table>
     </TableContainer>
   )

@@ -14,16 +14,18 @@ const DivisionTable = ({ teams }: IDivisionTable) => {
     <ScrollableContainer>
       <Table>
         <TableHeader teams={teams} />
-        {PICKS.map((player: IPicks, index: number) => {
-          return (
-            <ResultsRow
-              teams={teams}
-              player={player}
-              index={index}
-              key={`results-row-${player.name}`}
-            />
-          )
-        })}
+        <tbody>
+          {PICKS.map((player: IPicks, index: number) => {
+            return (
+              <ResultsRow
+                teams={teams}
+                player={player}
+                index={index}
+                key={`results-row-${player.name}`}
+              />
+            )
+          })}
+        </tbody>
       </Table>
     </ScrollableContainer>
   )
