@@ -3,42 +3,42 @@ import { TeamNames } from '../../enums/TeamNames'
 import { IPicks } from '../../interfaces/IPicks'
 
 const picks = new Map<TeamNames, OverUnder>([
-  [TeamNames.BOS, OverUnder.Over],
+  [TeamNames.BOS, OverUnder.Under],
   [TeamNames.MIL, OverUnder.Under],
-  [TeamNames.DEN, OverUnder.Over],
+  [TeamNames.DEN, OverUnder.Under],
   [TeamNames.PHX, OverUnder.Under],
-  [TeamNames.CLE, OverUnder.Over],
-  [TeamNames.PHI, OverUnder.Over],
-  [TeamNames.GS, OverUnder.Over],
-  [TeamNames.LAL, OverUnder.Over],
+  [TeamNames.CLE, OverUnder.Under],
+  [TeamNames.PHI, OverUnder.Under],
+  [TeamNames.GS, OverUnder.Under],
+  [TeamNames.LAL, OverUnder.Under],
   [TeamNames.LAC, OverUnder.Under],
   [TeamNames.MEM, OverUnder.Under],
-  [TeamNames.NY, OverUnder.Over],
+  [TeamNames.NY, OverUnder.Under],
   [TeamNames.MIA, OverUnder.Under],
   [TeamNames.SAC, OverUnder.Under],
-  [TeamNames.MIN, OverUnder.Over],
+  [TeamNames.MIN, OverUnder.Under],
   [TeamNames.NO, OverUnder.Under],
-  [TeamNames.OKC, OverUnder.Over],
-  [TeamNames.DAL, OverUnder.Over],
-  [TeamNames.ATL, OverUnder.Over],
-  [TeamNames.IND, OverUnder.Over],
+  [TeamNames.OKC, OverUnder.Under],
+  [TeamNames.DAL, OverUnder.Under],
+  [TeamNames.ATL, OverUnder.Under],
+  [TeamNames.IND, OverUnder.Under],
   [TeamNames.BKN, OverUnder.Under],
   [TeamNames.CHI, OverUnder.Under],
-  [TeamNames.ORL, OverUnder.Over],
+  [TeamNames.ORL, OverUnder.Under],
   [TeamNames.TOR, OverUnder.Under],
-  [TeamNames.UTAH, OverUnder.Over],
+  [TeamNames.UTAH, OverUnder.Under],
   [TeamNames.CHA, OverUnder.Under],
-  [TeamNames.HOU, OverUnder.Over],
+  [TeamNames.HOU, OverUnder.Under],
   [TeamNames.SA, OverUnder.Under],
   [TeamNames.DET, OverUnder.Under],
   [TeamNames.POR, OverUnder.Under],
   [TeamNames.WSH, OverUnder.Under],
 ])
 
-const AARON: IPicks = {
-  name: 'Aaron',
+const JUSTIN_H: IPicks = {
+  name: 'Justin H.',
   picks: picks,
-  locks: [TeamNames.CHI, TeamNames.IND, TeamNames.ATL, TeamNames.LAL],
+  locks: [TeamNames.BOS, TeamNames.DAL, TeamNames.BKN, TeamNames.PHX],
 }
 
-export { AARON }
+export { JUSTIN_H }
