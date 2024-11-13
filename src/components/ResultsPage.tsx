@@ -16,7 +16,7 @@ const ResultsPage = () => {
         <LoadingSpinner />
       ) : (
         <>
-          <Title>NBA Over/Unders 2023-24</Title>
+          <Title>NBA Over/Unders 2024-25</Title>
           <OverallStandings />
           <TeamStatsByDivision />
         </>
